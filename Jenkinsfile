@@ -9,8 +9,8 @@ pipeline {
     stage('docker build and push') {
       steps {
         sh '''
-        sudo docker build -t doro0704/keduit:purple .
-        sudo docker push doro0704/keduit:purple
+        sudo docker build -t doro0704/keduitlab:purple .
+        sudo docker push doro0704/keduitlab:purple
         '''
       }
     }
