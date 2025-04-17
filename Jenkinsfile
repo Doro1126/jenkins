@@ -6,18 +6,20 @@ pipeline {
         git url: 'https://github.com/Doro1126/jenkins.git', branch: 'main'
       }
     }
-    stage('docker build and push') {
+    stage('test') {
       steps {
         sh '''
-        sudo docker build -t doro0704/keduitlab:purple .
-        sudo docker push doro0704/keduitlab:purple
+        pwd
+        echo "hello"
         '''
       }
     }
-    stage('deploy and service') {
+    stage('test2') {
       steps {
         sh '''
-        sudo kubectl apply -f jenkins.yml
+        touch /home/seonho/doro/jenkins-test.txt
+        echo "test123" >> /home/seonho/doro/jenkins-test.txt
+        cat /home/seonho/doro/jenkins-test.txt
         '''
       }
     }
